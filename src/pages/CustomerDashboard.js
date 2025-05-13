@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../api/axios';
-import './CustomerDashboard.css'; // Make sure this contains the fade-slide CSS
+import './CustomerDashboard.css'; 
 
 export default function CustomerDashboard() {
   const [items, setItems] = useState([]);
@@ -56,7 +56,7 @@ export default function CustomerDashboard() {
 
   const handleBuy = async (item) => {
     const quantity = prompt(`Enter quantity to buy (Available: ${item.quantity}):`);
-    if (!quantity || isNaN(quantity) || quantity <= 0) return;
+    if (!quantity || isNaN(quantity) || quantity <= 0 || quantity > item.quantity) return;
 
     try {
       await axios.post('/buy-item', { item_id: item.id, quantity }, {
@@ -107,6 +107,11 @@ export default function CustomerDashboard() {
     item.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  // Calculate the total price for each item in the cart
+  const calculateTotal = (item, quantity) => {
+    return item.price * quantity;
+  };
+
   return (
     <div className="container py-4">
       <div className="d-flex justify-content-between align-items-center mb-3">
@@ -149,13 +154,11 @@ export default function CustomerDashboard() {
                     <span>Handled by: {order.employee_name || 'Unknown'}</span><br />
                     Quantity: {order.quantity}<br />
                     Status:{' '}
-                    <span className={
-                      order.status === 'pending' ? 'badge bg-warning' :
+                    <span className={order.status === 'pending' ? 'badge bg-warning' :
                       order.status === 'accepted' ? 'badge bg-success' :
                       order.status === 'declined' ? 'badge bg-danger' :
                       order.status === 'received' ? 'badge bg-secondary' :
-                      'badge bg-light text-dark'
-                    }>
+                      'badge bg-light text-dark'}>
                       {order.status}
                     </span>
                   </div>
@@ -255,7 +258,7 @@ export default function CustomerDashboard() {
               <div className="modal-body">
                 <p><strong>Item:</strong> {selectedOrder.item?.name || 'Unknown'}</p>
                 <p><strong>Quantity:</strong> {selectedOrder.quantity}</p>
-                <p><strong>Price:</strong> ${selectedOrder.item?.price || 'N/A'}</p>
+                <p><strong>Total Price:</strong> ${calculateTotal(selectedOrder.item, selectedOrder.quantity)}</p>
                 <p><strong>Seller:</strong> {selectedOrder.employee_name || 'Unknown'}</p>
                 <p><strong>Ordered At:</strong> {selectedOrder.created_at}</p>
               </div>
