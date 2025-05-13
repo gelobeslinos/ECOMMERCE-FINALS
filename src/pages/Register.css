@@ -1,0 +1,34 @@
+/* src/pages/Register.css */
+
+.register-container {
+    background: linear-gradient(to right, #43cea2, #185a9d);
+    min-height: 100vh;
+    padding: 2rem 0;
+  }
+  
+  .card {
+    border: none;
+    border-radius: 12px;
+  }
+  
+  .card h2 {
+    font-weight: bold;
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    border: none;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+  }
+  
+  .btn-outline-secondary:hover {
+    background-color: #ddd;
+  }
+  
+  .form-control, .form-select {
+    border-radius: 8px;
+  }
+  

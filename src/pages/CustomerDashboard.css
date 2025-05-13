@@ -1,0 +1,169 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(to right, #a592b9, #313e55);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+    padding: 2rem;
+    color: #fff;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 10px;
+}
+
+.list-group-item {
+    background-color: rgba(245, 245, 245, 0.95);
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+.btn {
+    transition: transform 0.2s ease-in-out;
+}
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.modal.fade-slide.show.d-block {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    border-radius: 10px;
+}
+
+.fade-slide {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 0.6s forwards;
+}
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mb-4.p-3.border.rounded.bg-light {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mb-2.bg-white.rounded {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 10px;
+}
+
+.mb-4 h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.mb-2 p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.d-flex.gap-2 button {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+}
+.btn-success {
+    background-color: #28a745;
+}
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.transactions-section {
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.transactions-section h3 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.transaction-item p {
+    font-size: 1rem;
+    color: #444;
+}
+
+.transaction-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.transaction-buttons button {
+    padding: 8px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+.transaction-accept {
+    background-color: #28a745;
+    color: #fff;
+}
+.transaction-decline {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.order-notification-title,
+.accepted-order-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.order-notification-section,
+.accepted-order-section {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.accepted-order-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #161616;
+    text-align: left;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
